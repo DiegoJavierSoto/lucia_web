@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lucía Romero | Inteligencia Emocional</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@100..900&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#819986",
+                        "surface-container": "#efeeeb",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#4c463b",
+                        "tertiary": "#1b170e",
+                        "on-secondary-container": "#55695f",
+                        "surface-container-low": "#f4f3f0",
+                        "primary-container": "#1b3022",
+                        "on-surface-variant": "#434843",
+                        "inverse-primary": "#b4cdb8",
+                        "on-surface": "#1a1c1a",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e3e2e0",
+                        "tertiary-fixed-dim": "#cec5b7",
+                        "primary-fixed-dim": "#b4cdb8",
+                        "secondary-fixed": "#d2e8db",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ebe1d2",
+                        "on-background": "#1a1c1a",
+                        "surface-bright": "#faf9f6",
+                        "secondary-fixed-dim": "#b6cbbf",
+                        "on-secondary-fixed": "#0d1f17",
+                        "inverse-on-surface": "#f2f1ee",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c3c8c1",
+                        "outline": "#737973",
+                        "surface-tint": "#4d6453",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f312f",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#1f1b12",
+                        "on-primary-fixed-variant": "#364c3c",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#384b42",
+                        "tertiary-container": "#302b21",
+                        "secondary": "#4f6359",
+                        "secondary-container": "#d2e8db",
+                        "surface-dim": "#dbdad7",
+                        "surface": "#faf9f6",
+                        "primary": "#061b0e",
+                        "on-tertiary-container": "#999284",
+                        "on-primary-fixed": "#0b2013",
+                        "surface-container-highest": "#e3e2e0",
+                        "primary-fixed": "#d0e9d4",
+                        "background": "#faf9f6",
+                        "surface-container-high": "#e9e8e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["EB Garamond"],
+                        "headline-md": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        .fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-primary">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-white/20 transition-all duration-500">
+        <div
+            class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <span class="font-headline-md text-headline-md tracking-tight text-primary">Lucía Romero</span>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300"
+                    href="#metodologia">Metodología</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300"
+                    href="#quien-soy">Quién soy</a>
+                <a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-300"
+                    href="#servicios">Servicios</a>
+                <a class="bg-primary-container text-on-primary px-8 py-3 rounded-lg font-body-md text-body-md hover:opacity-90 transition-all active:scale-95"
+                    href="https://wa.me/something">Contactar</a>
+            </div>
+            <button class="md:hidden text-primary">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+    <main class="overflow-x-hidden">
+        <!-- Hero Section -->
+        <section
+            class="relative pt-32 pb-20 md:pt-48 md:pb-40 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="asymmetric-grid gap-y-12">
+                <div class="col-span-12 lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
+                    <h1
+                        class="font-headline-lg text-headline-lg-mobile md:text-display-lg text-primary mb-8 max-w-3xl fade-in">
+                        Comprender tus emociones puede cambiar la forma en que vivís.
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl fade-in">
+                        Entrená habilidades emocionales para responder con mayor conciencia, equilibrio y bienestar
+                        frente a los desafíos cotidianos.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 fade-in">
+                        <a class="bg-primary-container text-on-primary text-center px-10 py-4 rounded-lg font-body-md hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                            href="#">
+                            Hablar por WhatsApp
+                        </a>
+                        <a class="border border-outline text-primary text-center px-10 py-4 rounded-lg font-body-md hover:bg-surface-container transition-all"
+                            href="#metodologia">
+                            Conocer la metodología
+                        </a>
+                    </div>
+                    <div class="mt-20 border-l-2 border-on-primary-container pl-8 py-2">
+                        <p class="font-headline-md text-headline-md text-primary italic">
+                            “Comprender es el primer paso. Entrenar es lo que produce el cambio.”
+                        </p>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-5 relative order-1 lg:order-2">
+                    <div class="aspect-[3/4] overflow-hidden rounded-xl shadow-2xl">
+                        <img alt="Lucía Romero portrait"
+                            class="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000 scale-105 hover:scale-100"
+                            src="img/lucia_1.jpeg" />
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -left-8 w-48 h-48 bg-secondary-container/30 -z-10 rounded-full blur-3xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Quién soy Section -->
+        <section class="py-24 bg-surface-container-low px-margin-mobile md:px-margin-desktop" id="quien-soy">
+            <div class="max-w-container-max mx-auto asymmetric-grid gap-16">
+                <div class="col-span-12 lg:col-span-4">
+                    <span
+                        class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary-container mb-4 block">Trayectoria</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Lucía Romero</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                        Instructora en Inteligencia Emocional dedicada a facilitar procesos de cambio basados en
+                        evidencia científica y un enfoque profundamente humano.
+                    </p>
+                </div>
+                <div class="col-span-12 lg:col-span-8">
+                    <div class="space-y-12 border-l border-outline-variant/30 pl-8 md:pl-16 relative">
+                        <div class="relative">
+                            <div class="absolute -left-[37px] md:-left-[69px] top-1 w-4 h-4 bg-primary rounded-full">
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Formación en Inteligencia
+                                Emocional</h3>
+                            <p class="text-on-surface-variant">Especialización técnica en el desarrollo de competencias
+                                intrapersonales e interpersonales.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[37px] md:-left-[69px] top-1 w-4 h-4 bg-outline rounded-full">
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Programación
+                                Neurolingüística</h3>
+                            <p class="text-on-surface-variant">Herramientas para la reestructuración cognitiva y mejora
+                                de la comunicación interna.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[37px] md:-left-[69px] top-1 w-4 h-4 bg-outline rounded-full">
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Mindfulness</h3>
+                            <p class="text-on-surface-variant">Prácticas de atención plena aplicadas a la reducción del
+                                estrés y la regulación emocional.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[37px] md:-left-[69px] top-1 w-4 h-4 bg-outline rounded-full">
+                            </div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">Psicología UNMDP</h3>
+                            <p class="text-on-surface-variant">Formación académica continua para profundizar en los
+                                procesos mentales y el comportamiento humano.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Cuando las personas llegan Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-center mb-16 text-primary">Cuando las personas llegan...
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="p-12 bg-surface-container flex flex-col items-center justify-center text-center rounded-lg min-h-[300px] hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-4xl mb-6 text-on-primary-container">psychology</span>
+                    <p class="font-headline-md text-headline-md text-primary">"No tengo motivación"</p>
+                </div>
+                <div
+                    class="p-12 bg-surface-container flex flex-col items-center justify-center text-center rounded-lg min-h-[300px] hover:bg-surface-container-high transition-colors">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-6 text-on-primary-container">settings_voice</span>
+                    <p class="font-headline-md text-headline-md text-primary">"Vivo en piloto automático"</p>
+                </div>
+                <div
+                    class="p-12 bg-surface-container flex flex-col items-center justify-center text-center rounded-lg min-h-[300px] hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-4xl mb-6 text-on-primary-container">air</span>
+                    <p class="font-headline-md text-headline-md text-primary">"Tengo ansiedad"</p>
+                </div>
+            </div>
+        </section>
+        <!-- La Propuesta Section -->
+        <section class="py-24 bg-surface-bright px-margin-mobile md:px-margin-desktop" id="metodologia">
+            <div class="max-w-container-max mx-auto">
+                <div class="text-center mb-20">
+                    <span
+                        class="font-label-sm text-label-sm uppercase tracking-widest text-on-secondary-container mb-4 block">El
+                        Enfoque</span>
+                    <h2 class="font-headline-lg text-headline-lg text-primary">La Propuesta</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                    <div class="text-center px-4">
+                        <div
+                            class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <span class="material-symbols-outlined text-primary text-3xl">visibility</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Autoconocimiento</h3>
+                        <p class="font-body-md text-on-surface-variant">Comprender profundamente cómo pensamos, sentimos
+                            y actuamos ante diversas situaciones.</p>
+                    </div>
+                    <div class="text-center px-4">
+                        <div
+                            class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <span class="material-symbols-outlined text-primary text-3xl">balance</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Autorregulación</h3>
+                        <p class="font-body-md text-on-surface-variant">Aprender recursos y herramientas prácticas para
+                            responder de manera más saludable y equilibrada.</p>
+                    </div>
+                    <div class="text-center px-4">
+                        <div
+                            class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                            <span class="material-symbols-outlined text-primary text-3xl">spa</span>
+                        </div>
+                        <h3 class="font-headline-md text-headline-md text-primary mb-4">Bienestar</h3>
+                        <p class="font-body-md text-on-surface-variant">Construir cambios sostenibles en el tiempo
+                            mediante la práctica diaria y la integración.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Cómo trabajamos Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-center mb-20 text-primary">Cómo trabajamos</h2>
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant/30 -z-10"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="bg-surface p-8 rounded-xl border border-outline-variant/20 shadow-sm">
+                        <div class="text-primary font-headline-md mb-4 flex items-center gap-3">
+                            <span
+                                class="text-on-primary-container text-label-sm border border-on-primary-container rounded-full w-8 h-8 flex items-center justify-center">01</span>
+                            Comprender
+                        </div>
+                        <p class="text-on-surface-variant">Analizamos los patrones de conducta y las creencias que
+                            sostienen tus respuestas emocionales actuales.</p>
+                    </div>
+                    <div class="bg-surface p-8 rounded-xl border border-outline-variant/20 shadow-sm">
+                        <div class="text-primary font-headline-md mb-4 flex items-center gap-3">
+                            <span
+                                class="text-on-primary-container text-label-sm border border-on-primary-container rounded-full w-8 h-8 flex items-center justify-center">02</span>
+                            Entrenar
+                        </div>
+                        <p class="text-on-surface-variant">Realizamos ejercicios prácticos diseñados para desarrollar
+                            nuevas conexiones y habilidades de respuesta.</p>
+                    </div>
+                    <div class="bg-surface p-8 rounded-xl border border-outline-variant/20 shadow-sm">
+                        <div class="text-primary font-headline-md mb-4 flex items-center gap-3">
+                            <span
+                                class="text-on-primary-container text-label-sm border border-on-primary-container rounded-full w-8 h-8 flex items-center justify-center">03</span>
+                            Integrar
+                        </div>
+                        <p class="text-on-surface-variant">Llevamos lo aprendido al día a día, convirtiendo la práctica
+                            en un hábito natural y sostenible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Lo que cambia Section -->
+        <section
+            class="py-24 bg-primary-container text-on-primary px-margin-mobile md:px-margin-desktop overflow-hidden">
+            <div class="max-w-container-max mx-auto asymmetric-grid gap-8">
+                <div class="col-span-12 lg:col-span-5 flex flex-col justify-center">
+                    <h2 class="font-headline-lg text-headline-lg mb-8">Lo que cambia cuando empezás a entrenar</h2>
+                    <p class="font-body-lg text-on-primary-container opacity-90">La inteligencia emocional no es una
+                        meta, es un músculo que se fortalece cada día.</p>
+                </div>
+                <div class="col-span-12 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-8 rounded-lg hover:bg-white/10 transition-all border border-white/10">
+                        <span class="material-symbols-outlined mb-4 text-secondary-fixed">lightbulb</span>
+                        <h3 class="font-headline-md text-headline-md mb-2">Mayor claridad mental</h3>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-lg hover:bg-white/10 transition-all border border-white/10">
+                        <span class="material-symbols-outlined mb-4 text-secondary-fixed">energy_savings_leaf</span>
+                        <h3 class="font-headline-md text-headline-md mb-2">Menor ansiedad</h3>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-lg hover:bg-white/10 transition-all border border-white/10">
+                        <span class="material-symbols-outlined mb-4 text-secondary-fixed">groups</span>
+                        <h3 class="font-headline-md text-headline-md mb-2">Mejores vínculos</h3>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-lg hover:bg-white/10 transition-all border border-white/10">
+                        <span class="material-symbols-outlined mb-4 text-secondary-fixed">verified_user</span>
+                        <h3 class="font-headline-md text-headline-md mb-2">Respuestas conscientes</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Servicios Section -->
+        <section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="servicios">
+            <div class="text-center mb-20">
+                <h2 class="font-headline-lg text-headline-lg text-primary">Formas de trabajar conmigo</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Individual -->
+                <div
+                    class="glass-card p-12 rounded-2xl flex flex-col items-start hover:shadow-2xl transition-all duration-500">
+                    <span class="font-label-sm text-label-sm uppercase text-on-secondary-container mb-6">Uno a
+                        uno</span>
+                    <h3 class="font-headline-lg text-headline-lg text-primary mb-6">Sesiones individuales</h3>
+                    <ul class="space-y-4 mb-12 flex-grow">
+                        <li class="flex items-center gap-3 text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Modalidad Online (Zoom / Google
+                            Meet)
+                        </li>
+                        <li class="flex items-center gap-3 text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Entrenamiento práctico 100%
+                            personalizado
+                        </li>
+                        <li class="flex items-center gap-3 text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Frecuencia acorde a tus
+                            necesidades
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full bg-primary-container text-on-primary py-4 rounded-lg font-body-md hover:bg-primary transition-all">Consultar</button>
+                </div>
+                <!-- Grupal -->
+                <div
+                    class="glass-card p-12 rounded-2xl flex flex-col items-start hover:shadow-2xl transition-all duration-500 border-outline-variant/10">
+                    <span class="font-label-sm text-label-sm uppercase text-on-secondary-container mb-6">Equipos y
+                        organizaciones</span>
+                    <h3 class="font-headline-lg text-headline-lg text-primary mb-6">Talleres grupales</h3>
+                    <ul class="space-y-4 mb-12 flex-grow">
+                        <li class="flex items-center gap-3 text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Empresas y Organizaciones
+                        </li>
+                        <li class="flex items-center gap-3 text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Equipos de alto desempeño
+                        </li>
+                        <li class="flex items-center gap-3 text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 bg-primary rounded-full"></span> Programas In-Company o remotos
+                        </li>
+                    </ul>
+                    <button
+                        class="w-full border border-outline text-primary py-4 rounded-lg font-body-md hover:bg-surface-container transition-all">Consultar</button>
+                </div>
+            </div>
+        </section>
+        <!-- Diferenciador Section -->
+        <section class="py-32 bg-surface-container-high px-margin-mobile md:px-margin-desktop text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-12">Por qué este no es un programa más de
+                    "motivación"</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+                    <div class="p-8 bg-surface/50 rounded-lg">
+                        <h4 class="font-headline-md text-headline-md text-error mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined">block</span> Lo que NO es
+                        </h4>
+                        <ul class="space-y-2 text-on-surface-variant">
+                            <li>No es solo motivación pasajera.</li>
+                            <li>No son consejos genéricos.</li>
+                            <li>No hay soluciones mágicas de un día.</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 bg-primary-container text-on-primary rounded-lg">
+                        <h4 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-secondary-fixed">check_circle</span> El Proceso
+                            Real
+                        </h4>
+                        <ul class="space-y-2 opacity-90">
+                            <li>Comprender la raíz biológica y cognitiva.</li>
+                            <li>Entrenar nuevas respuestas neuronales.</li>
+                            <li>Practicar e Integrar en la vida diaria.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="py-24 px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-center mb-16 text-primary">Preguntas frecuentes</h2>
+            <div class="space-y-4">
+                <details
+                    class="group bg-surface-container-low rounded-lg p-6 border border-transparent open:border-outline-variant/30 transition-all">
+                    <summary
+                        class="list-none flex justify-between items-center cursor-pointer font-headline-md text-primary">
+                        ¿Qué modalidad tienen las sesiones?
+                        <span
+                            class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-on-surface-variant font-body-md leading-relaxed">
+                        Las sesiones son 100% online a través de videollamada, lo que nos permite trabajar con total
+                        flexibilidad independientemente de tu ubicación geográfica.
+                    </p>
+                </details>
+                <details
+                    class="group bg-surface-container-low rounded-lg p-6 border border-transparent open:border-outline-variant/30 transition-all">
+                    <summary
+                        class="list-none flex justify-between items-center cursor-pointer font-headline-md text-primary">
+                        ¿Cuánto dura el proceso?
+                        <span
+                            class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-on-surface-variant font-body-md leading-relaxed">
+                        No hay una duración fija, ya que cada persona tiene ritmos diferentes. Sin embargo, solemos
+                        recomendar un compromiso inicial de al menos 8 encuentros para comenzar a notar cambios
+                        integrados.
+                    </p>
+                </details>
+                <details
+                    class="group bg-surface-container-low rounded-lg p-6 border border-transparent open:border-outline-variant/30 transition-all">
+                    <summary
+                        class="list-none flex justify-between items-center cursor-pointer font-headline-md text-primary">
+                        ¿Cómo puedo consultar los honorarios?
+                        <span
+                            class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <p class="mt-4 text-on-surface-variant font-body-md leading-relaxed">
+                        Podés solicitar el tarifario actualizado haciendo click en el botón de contacto. Te enviaré toda
+                        la información detallada por WhatsApp o correo.
+                    </p>
+                </details>
+            </div>
+        </section>
+        <!-- Testimonios Section -->
+        <section class="py-24 bg-surface-container-highest/30 px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-container-max mx-auto">
+                <h2 class="font-headline-lg text-headline-lg text-center mb-16 text-primary">Experiencias</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-surface p-10 rounded-xl shadow-sm italic text-on-surface-variant relative overflow-hidden">
+                        <span
+                            class="material-symbols-outlined absolute -top-4 -left-4 text-9xl opacity-5 text-primary">format_quote</span>
+                        <p class="font-headline-md text-headline-md leading-relaxed mb-6">"Aprendí a reconocer la
+                            ansiedad antes de que me desborde. Hoy mi respuesta es muy diferente."</p>
+                        <cite class="not-italic font-label-sm uppercase tracking-widest text-primary">— María P.</cite>
+                    </div>
+                    <div
+                        class="bg-surface p-10 rounded-xl shadow-sm italic text-on-surface-variant relative overflow-hidden">
+                        <span
+                            class="material-symbols-outlined absolute -top-4 -left-4 text-9xl opacity-5 text-primary">format_quote</span>
+                        <p class="font-headline-md text-headline-md leading-relaxed mb-6">"El enfoque de Lucía es muy
+                            claro y práctico. No son solo palabras, son herramientas reales."</p>
+                        <cite class="not-italic font-label-sm uppercase tracking-widest text-primary">— Juan
+                            Ignacio</cite>
+                    </div>
+                    <div
+                        class="bg-surface p-10 rounded-xl shadow-sm italic text-on-surface-variant relative overflow-hidden">
+                        <span
+                            class="material-symbols-outlined absolute -top-4 -left-4 text-9xl opacity-5 text-primary">format_quote</span>
+                        <p class="font-headline-md text-headline-md leading-relaxed mb-6">"Mi relación conmigo misma
+                            cambió totalmente desde que empezamos el entrenamiento."</p>
+                        <cite class="not-italic font-label-sm uppercase tracking-widest text-primary">— Elena R.</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA Section -->
+        <section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+            <div class="asymmetric-grid items-center gap-16">
+                <div class="col-span-12 lg:col-span-6">
+                    <div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                        <img alt="Lucía Romero" class="w-full h-full object-cover" src="img/lucia_1.jpeg" />
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-6">
+                    <h2
+                        class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-8 leading-tight">
+                        El cambio comienza cuando dejás de intentar controlar todo y empezás a comprender lo que te
+                        sucede.
+                    </h2>
+                    <a class="inline-flex items-center gap-4 bg-primary-container text-on-primary px-12 py-5 rounded-lg font-headline-md hover:scale-105 transition-all shadow-xl"
+                        href="#">
+                        Comenzar hoy vía WhatsApp
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-surface-container py-16 px-margin-mobile md:px-margin-desktop border-t border-outline-variant/10">
+        <div
+            class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+            <div class="max-w-xs">
+                <span class="font-headline-md text-headline-md text-primary block mb-4">Lucía Romero</span>
+                <p class="font-body-md text-on-surface-variant">© 2024 Lucía Romero. Inteligencia Emocional con base
+                    científica.</p>
+            </div>
+            <div class="flex gap-8 flex-wrap">
+                <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all"
+                    href="#">Instagram</a>
+                <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all"
+                    href="#">LinkedIn</a>
+                <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all"
+                    href="#">Términos</a>
+                <a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all"
+                    href="#">Privacidad</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Simple scroll behavior for nav
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md', 'h-16');
+                nav.classList.remove('h-20');
+            } else {
+                nav.classList.remove('shadow-md', 'h-16');
+                nav.classList.add('h-20');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('opacity-0');
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
